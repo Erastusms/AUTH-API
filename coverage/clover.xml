@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668262941125" clover="3.2.0">
-  <project timestamp="1668262941125" name="All files">
-    <metrics statements="77" coveredstatements="77" conditionals="30" coveredconditionals="30" methods="18" coveredmethods="18" elements="125" coveredelements="125" complexity="0" loc="77" ncloc="77" packages="6" files="11" classes="11"/>
+<coverage generated="1668322961769" clover="3.2.0">
+  <project timestamp="1668322961769" name="All files">
+    <metrics statements="77" coveredstatements="77" conditionals="30" coveredconditionals="30" methods="18" coveredmethods="18" elements="125" coveredelements="125" complexity="0" loc="77" ncloc="77" packages="7" files="11" classes="11"/>
     <package name="Applications.security">
-      <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
-      <file name="BcryptPasswordHash.js" path="C:\Users\Lenovo\Desktop\Dicoding\AUTH-API\src\Applications\security\BcryptPasswordHash.js">
-        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-      </file>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="PasswordHash.js" path="C:\Users\Lenovo\Desktop\Dicoding\AUTH-API\src\Applications\security\PasswordHash.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
@@ -128,6 +119,18 @@
         <line num="34" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Infrastructures.security">
+      <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="BcryptPasswordHash.js" path="C:\Users\Lenovo\Desktop\Dicoding\AUTH-API\src\Infrastructures\security\BcryptPasswordHash.js">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
     </package>
   </project>

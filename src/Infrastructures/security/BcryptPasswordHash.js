@@ -1,4 +1,4 @@
-const PasswordHash = require('./PasswordHash');
+const PasswordHash = require('../../Applications/security/PasswordHash');
 
 class BcryptPasswordHash extends PasswordHash {
   constructor(bcrypt, saltRound = 10) {
