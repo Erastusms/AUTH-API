@@ -1,6 +1,6 @@
 node_modules
 coverage
 .env
-auth-api-app-server.pem
 package-lock.json
+auth-api-app-server.pem
 config/database/test.json
