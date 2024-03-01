@@ -1,7 +1,18 @@
-const Hapi = require('@hapi/hapi');
-const ClientError = require('../../Commons/exceptions/ClientError');
-const DomainErrorTranslator = require('../../Commons/exceptions/DomainErrorTranslator');
-const users = require('../../Interfaces/http/api/users');
+const Hapi = require("@hapi/hapi");
+const ClientError = require("../../Commons/exceptions/ClientError");
+const DomainErrorTranslator = require("../../Commons/exceptions/DomainErrorTranslator");
+const users = require("../../Interfaces/http/api/users");
+
+const HapiSwagger = require("hapi-swagger");
+const Inert = require("@hapi/inert");
+const Vision = require("@hapi/vision");
+
+const swaggerOptions = {
+  info: {
+    title: "Auth API Documentation",
+    version: "1.0.0",
+  },
+};
 
 const createServer = async (container) => {
   const server = Hapi.server({
@@ -14,17 +25,27 @@ const createServer = async (container) => {
       plugin: users,
       options: { container },
     },
+    {
+      plugin: Inert,
+    },
+    {
+      plugin: Vision,
+    },
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
   ]);
 
   server.route({
-    method: 'GET',
-    path: '/',
+    method: "GET",
+    path: "/",
     handler: () => ({
-      value: 'Hello world!',
+      value: "Hello world!",
     }),
   });
 
-  server.ext('onPreResponse', (request, h) => {
+  server.ext("onPreResponse", (request, h) => {
     // mendapatkan konteks response dari request
     const { response } = request;
 
@@ -35,7 +56,7 @@ const createServer = async (container) => {
       // penanganan client error secara internal.
       if (translatedError instanceof ClientError) {
         const newResponse = h.response({
-          status: 'fail',
+          status: "fail",
           message: translatedError.message,
         });
         newResponse.code(translatedError.statusCode);
@@ -49,8 +70,8 @@ const createServer = async (container) => {
 
       // penanganan server error sesuai kebutuhan
       const newResponse = h.response({
-        status: 'error',
-        message: 'terjadi kegagalan pada server kami',
+        status: "error",
+        message: "terjadi kegagalan pada server kami",
       });
       newResponse.code(500);
       return newResponse;
